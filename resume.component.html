@@ -1,0 +1,269 @@
+<div id="customers">  
+    <div id="resume_builder_parent">
+      <div id="resume_builder_form">
+        <div class="container mt-3" style="background-color: #b5acac">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="card">
+                <div class="card-header">
+                  <img height="150" width="150" id="pic" src="/assets/resume/anjana.jpg" />
+                </div>
+                <div class="card-body">
+                  <h3>{{formData.fname}}</h3>
+                  <h3>{{formData.lname}}</h3>
+                </div>
+                <div class="card-footer">
+                  <label>Email: <span>{{formData.email}} </span></label><br>
+                  <label>Mobile: <span>{{formData.mobile}} </span></label><br />
+                  <label>DOB: <span> {{formData.dob}}</span></label><br />
+                  <label>Currently: <span >{{formData.occupation}} </span></label
+                  ><br />
+                  <label>Employment: <span>{{formData.type}} </span></label><br />
+                  <label>Address: <span>{{formData.address}} </span></label><br />
+                  <label>Hobbie: <span>{{formData.hobbies}} </span></label>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <h6>Skills</h6>
+                  <span class="skil-item">{{formData.tech1}} </span>
+                  <span  class="skil-item">{{formData.tech2}} </span>
+                  <span class="skil-item">{{formData.tech3}} </span>
+                  <span class="skil-item">Wordpress</span>
+                  <span class="skil-item">Drupal</span>
+                  <span class="skil-item">MYSQL</span>
+                  <span class="skil-item">Photoshop</span>
+                  <span class="skil-item">NodeJs</span>
+                  <span class="skil-item">SEO</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-9">
+              <div class="row">
+                <div class="col-md-6">
+                  <p><i class="fa fa-phone"> 8318691854</i></p>
+                  <p><i class="fa fa-envelope"> anjanak808@gmail.com</i></p>
+                </div>
+                <div class="col-md-6">
+                  <p>
+                    <i class="fa-solid fa-link">
+                      <a
+                        href="//www.linkedin.com/in/anjana-pareta-b05285149/"
+                        target="_blank"
+                        >Linkedin</a
+                      ></i
+                    >
+                  </p>
+                  <p>
+                    <i class="fa-brands fa-github-square">
+                      <a
+                        href="//github.com/ialabs-students/html-css-resume-builder-anjana-kosta"
+                        target="_blank"
+                        >Github</a
+                      ></i
+                    >
+                  </p>
+                </div>
+              </div>
+              <hr />
+              <h4>Career Objective</h4>
+              <div class="jumbotron">
+                <p>{{formData.objective}}</p>
+              </div>
+
+              <h4>Qualification:</h4>
+
+              <div class="jumbotron">
+                <div class="row visible-md visible-lg">
+                  <div class="form-group col-md-3">
+                    <label>Education</label>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label>School/University</label>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label>Year of Passing</label>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label>Percentage/CGPA</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-3">
+                    <!-- <label class="visible-xs visible-sm">First Name</label>
+                    Jake -->
+                    <label>Graduation: </label>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <div>{{formData.university1}}</div>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <!-- <label class="visible-xs visible-sm">Address</label>
+                    1060 W Addison St -->
+                    <div>{{formData.yearofpassing1}}</div>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <!-- <label class="visible-xs visible-sm">Address</label>
+                  1060 W Addison St -->
+                    <div>{{formData.percentage1}}</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-3">
+                    <!-- <label class="visible-xs visible-sm">First Name</label>
+                  Jake -->
+                    <label> Diploma: </label>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <div>{{formData.university2}}</div>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <!-- <label class="visible-xs visible-sm">Address</label>
+                1060 W Addison St -->
+                    <div>{{formData.yearofpassing2}}</div>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <!-- <label class="visible-xs visible-sm">Address</label>
+              1060 W Addison St -->
+                    <div>{{formData.percentage2}}</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-3">
+                    <!-- <label class="visible-xs visible-sm">First Name</label>
+                Jake -->
+                    <label> Intermidiate: </label>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <div>{{formData.university3}}</div>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <!-- <label class="visible-xs visible-sm">Address</label>
+                1060 W Addison St -->
+                    <div>{{formData.yearofpassing3}}</div>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <!-- <label class="visible-xs visible-sm">Address</label>
+              1060 W Addison St -->
+                    <div>{{formData.percentage3}}</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-3">
+                    <!-- <label class="visible-xs visible-sm">First Name</label>
+              Jake -->
+                    <label>High School: </label>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <div>{{formData.university4}}</div>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <!-- <label class="visible-xs visible-sm">Address</label>
+            1060 W Addison St -->
+                    <div>{{formData.yearofpassing4}}</div>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <!-- <label class="visible-xs visible-sm">Address</label>
+          1060 W Addison St -->
+                    <div>{{formData.percentage4}}</div>
+                  </div>
+                </div>
+              </div>
+
+              <hr />
+              <h4>Experience:</h4>
+
+              <div class="jumbotron">
+                <div class="row visible-md visible-lg">
+                  <div class="form-group col-md-4">
+                    <label>Organization</label>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label>Joining Date</label>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label>Releaving Date</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-4">
+                    <!-- <label class="visible-xs visible-sm">First Name</label>
+                    Jake -->
+                    <div>{{formData.organization1}}</div>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <!-- <label class="visible-xs visible-sm">Last Name</label>
+                    Elwood -->
+                    <div>{{formData.doj1}}</div>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <!-- <label class="visible-xs visible-sm">Address</label>
+                    1060 W Addison St -->
+                    <div>{{formData.dor1}}</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-4">
+                    <!-- <label class="visible-xs visible-sm">First Name</label>
+                    Jake -->
+                    <div>{{formData.organization2}}</div>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <!-- <label class="visible-xs visible-sm">Last Name</label>
+                    Elwood -->
+                    <div>{{formData.doj2}}</div>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <!-- <label class="visible-xs visible-sm">Address</label>
+                    1060 W Addison St -->
+                    <div>{{formData.dor2}}</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-4">
+                    <!-- <label class="visible-xs visible-sm">First Name</label>
+                    Jake -->
+                    <div>{{formData.organization3}}</div>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <!-- <label class="visible-xs visible-sm">Last Name</label>
+                    Elwood -->
+                    <div>{{formData.doj3}}</div>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <!-- <label class="visible-xs visible-sm">Address</label>
+                    1060 W Addison St -->
+                    <div>{{formData.dor3}}</div>
+                  </div>
+                </div>
+              </div>
+
+              <h4>Project</h4>
+              <div class="jumbotron">
+                <p>{{formData.project}}</p>
+              </div>
+
+              <h4>Describe Yourself:</h4>
+              <div class="jumbotron">
+                <p>{{formData.describe}}</p>
+              </div>
+
+              <hr />
+              <h4>Declaration:</h4>
+              <div class="jumbotron">
+                <p id="declare">{{formData.declare}}</p>
+              </div>
+              <br />
+            </div>
+            <hr />
+            <div class="col-md-12 d-flex justify-content-between">
+              <p class="date justify-align-left">Date: <br />06/20/2022</p>
+              <p class="justify-align-right">Anjana</p>
+            </div>
+          </div>
+          <button class ="btn btn-primary" (click)="editinfo()"> Edit info</button>
+          <!-- <button onclick="javascript:demoFromHTML();">Generate PDF</button> -->
+        </div>
+      </div>
+      </div>
+</div>

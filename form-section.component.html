@@ -1,0 +1,832 @@
+<!-- <div class="container">
+    <h4>Resume Builder</h4>
+<form>
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" [(ngModel)]="FormData.firstName" class="form-control" name="first" id="firstName" placeholder="firstName">
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" [(ngModel)]="FormData.lastName" class="form-control" name="last" id="lastName" placeholder="lastName">
+      </div>
+    
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" [(ngModel)]="FormData.email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="pass">Password</label>
+      <input type="password" [(ngModel)]="FormData.pass" class="form-control" name="pass" id="pass" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-success mb-2">Reset</button>
+    <button type="submit" class="btn btn-primary mb-2 ml-2" (click)="saveFormData()">Submit</button>
+  </form>
+  </div> -->
+
+<div *ngIf="!showResume" id="resume_builder_form">
+  <div>
+    <p style="text-align: center; font-size: 20px; color: white">
+      Build you resume here:
+    </p>
+  </div>
+
+  <form action="" id="regForm" (submit)="saveFormData()">
+    <div class="row">
+      <div class="jumbotron col-md-4">
+        <div class="card-body">
+          <img
+            class="card-img-top"
+            width="200"
+            height="200"
+            src="./assets/resume/anjana.jpg"
+            alt="anjana"
+          />
+          <label>Upload Picture</label>
+          <input
+            type="file"
+            placeholder="upload document"
+            id="pic"
+            name="pic"
+          />
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+          <!-- <a href="#" class="fa fa-google"></a> -->
+          <a
+            href="https://www.linkedin.com/in/anjana-pareta-b05285149/"
+            class="fa fa-linkedin"
+          ></a>
+        </div>
+        <!-- <div class="card-footer">
+         
+        </div> -->
+      </div>
+      <div class="col-md-1"></div>
+
+      <div class="jumbotron col-md-7" style="height: 450px">
+        <h4 style="color: rgb(22, 20, 20)">Enter Basic Informations:</h4>
+
+        <div class="form-group row">
+          <label for="fname" class="col-sm-2 col-form-label">FirstName</label>
+          <div class="col-sm-4">
+            <input
+              type="text"
+              [(ngModel)]= "formData.fname"
+              class="form-control"
+              id="fname"
+              name="fname"
+            />
+            <!-- <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com"> -->
+          </div>
+          <label for="lname" class="col-sm-2 col-form-label">LastName</label>
+          <div class="col-sm-4">
+            <input
+              type="text"
+              [(ngModel)] = "formData.lname"
+              class="form-control"
+              id="lname"
+              name="lname"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="email" class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-4">
+            <input
+              type="email"
+              class="form-control"
+              [(ngModel)]= "formData.email"
+              id="email"
+              name="email"
+            />
+            <!-- <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com"> -->
+          </div>
+          <label for="mobile" class="col-sm-2 col-form-label">Mobile</label>
+          <div class="col-sm-4">
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="formData.mobile"
+              id="mobile"
+              name="mobile"
+            />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="dob" class="col-sm-2 col-form-label">DOB</label>
+          <div class="col-sm-4">
+            <input
+              type="date"
+              class="form-control"
+              [(ngModel)]="formData.dob"
+              id="dob"
+              name="dob"
+            />
+            <!-- <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com"> -->
+          </div>
+          <label for="gender" class="col-sm-2 col-form-label">Gender</label>
+          <div class="col-sm-4">
+            <select name="gender" id="gender" [(ngModel)]="formData.gender">
+              <option value="">Select</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+            <!-- <input type="text" class="form-control" id="gender" name="gender"> -->
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="occupation" class="col-sm-2 col-form-label"
+            >Currently</label
+          >
+          <div class="col-sm-4">
+            <select
+              name="occupation"
+              id="occupation"
+              [(ngModel)]="formData.occupation"
+            >
+              <option value="">Select</option>
+              <option>Student</option>
+              <option>Employee</option>
+            </select>
+          </div>
+          <label for="type" class="col-sm-2 col-form-label">Employment</label>
+          <div class="col-sm-4">
+            <select name="type" id="type" [(ngModel)]="formData.type">
+              <option value="">Select</option>
+              <option>Full Time</option>
+              <option>Part Time</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="langauge" class="col-sm-2 col-form-label">Langauge</label>
+          <div class="col-sm-4">
+            <select
+              name="langauge"
+              id="langauge"
+              [(ngModel)]="formData.langauge"
+            >
+              <option value="">Select</option>
+              <option>Hindi</option>
+              <option>English</option>
+            </select>
+          </div>
+          <label for="type" class="col-sm-2 col-form-label">Hobbies</label>
+          <div class="col-sm-4">
+            <select name="hobbies" id="hobbies" [(ngModel)]="formData.hobbies">
+              <option value="">Select</option>
+              <option>Dance</option>
+              <option>Singing</option>
+              <option>Playing</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="address" class="col-sm-2 col-form-label">Address</label>
+          <div class="col-sm-4">
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="formData.address"
+              id="address"
+              name="address"
+            />
+            <!-- <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com"> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <h4 style="color: white">Career Objective</h4>
+    <textarea
+      name="objective"
+      [(ngModel)]="formData.objective"
+      id="objective"
+      width="1000px"
+      height="200px"
+      placeholder="Enter you wishdom"
+    ></textarea>
+
+    <hr />
+    <h4 style="color: white">Enter Educational Qualification:</h4>
+
+    <div class="jumbotron">
+      <div class="row visible-md visible-lg">
+        <div class="form-group col-md-3">
+          <label>Education</label>
+        </div>
+        <div class="form-group col-md-3">
+          <label>School/University</label>
+        </div>
+        <div class="form-group col-md-3">
+          <label>Year of Passing</label>
+        </div>
+        <div class="form-group col-md-3">
+          <label>Percentage/CGPA</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-3">
+          <!-- <label class="visible-xs visible-sm">First Name</label>
+                Jake -->
+          <label>Graduation: </label>
+        </div>
+        <div class="form-group col-md-3">
+          <!-- <label class="visible-xs visible-sm">Last Name</label>
+                Elwood -->
+          <input
+            class="form-control"
+            [(ngModel)]="formData.university1"
+            type="text"
+            name="university1"
+            id="university1"
+            placeholder="Enter School/University"
+          />
+        </div>
+        <div class="form-group col-md-3">
+          <!-- <label class="visible-xs visible-sm">Address</label>
+                1060 W Addison St -->
+          <input
+            class="form-control"
+            [(ngModel)]="formData.yearofpassing1"
+            type="number"
+            name="yearofpassing1"
+            id="yearofpassing1"
+            placeholder="Enter Year of Passing"
+          />
+        </div>
+        <div class="form-group col-md-3">
+          <!-- <label class="visible-xs visible-sm">Address</label>
+              1060 W Addison St -->
+          <input
+            class="form-control"
+            type="number"
+            [(ngModel)]="formData.percentage1"
+            name="percentage1"
+            id="percentage1"
+            placeholder="Enter Percentage/CGPA"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-3">
+          <!-- <label class="visible-xs visible-sm">First Name</label>
+              Jake -->
+          <label> Diploma: </label>
+        </div>
+        <div class="form-group col-md-3">
+          <!-- <label class="visible-xs visible-sm">Last Name</label>
+              Elwood -->
+          <input
+            class="form-control"
+            type="text"
+            [(ngModel)]="formData.university2"
+            name="university2"
+            id="university2"
+            placeholder="Enter School/University"
+          />
+        </div>
+        <div class="form-group col-md-3">
+          <!-- <label class="visible-xs visible-sm">Address</label>
+              1060 W Addison St -->
+          <input
+            class="form-control"
+            type="number"
+            [(ngModel)]="formData.yearofpassing2"
+            name="yearofpassing2"
+            id="yearofpassing2"
+            placeholder="Enter Year of Passing"
+          />
+        </div>
+        <div class="form-group col-md-3">
+          <!-- <label class="visible-xs visible-sm">Address</label>
+            1060 W Addison St -->
+          <input
+            class="form-control"
+            type="number"
+            [(ngModel)]="formData.percentage2"
+            name="percentage2"
+            id="percentage2"
+            placeholder="Enter Percentage/CGPA"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-3">
+          <!-- <label class="visible-xs visible-sm">First Name</label>
+            Jake -->
+          <label> Intermidiate: </label>
+        </div>
+        <div class="form-group col-md-3">
+          <!-- <label class="visible-xs visible-sm">Last Name</label>
+            Elwood -->
+          <input
+            class="form-control"
+            type="text"
+            [(ngModel)]="formData.university3"
+            id="university3"
+            name="university3"
+            placeholder="Enter School/University"
+          />
+        </div>
+        <div class="form-group col-md-3">
+          <!-- <label class="visible-xs visible-sm">Address</label>
+            1060 W Addison St -->
+          <input
+            class="form-control"
+            type="number"
+            [(ngModel)]="formData.yearofpassing3"
+            name="yearofpassing3"
+            id="yearofpassing3"
+            placeholder="Enter Year of Passing"
+          />
+        </div>
+        <div class="form-group col-md-3">
+          <!-- <label class="visible-xs visible-sm">Address</label>
+          1060 W Addison St -->
+          <input
+            class="form-control"
+            type="number"
+            [(ngModel)]="formData.percentage3"
+            name="percentage3"
+            id="percentage3"
+            placeholder="Enter Percentage/CGPA"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-3">
+          <!-- <label class="visible-xs visible-sm">First Name</label>
+          Jake -->
+          <label>High School: </label>
+        </div>
+        <div class="form-group col-md-3">
+          <!-- <label class="visible-xs visible-sm">Last Name</label>
+          Elwood -->
+          <input
+            class="form-control"
+            type="text"
+            [(ngModel)]="formData.university4"
+            name="university4"
+            id="university4"
+            placeholder="Enter School/University"
+          />
+        </div>
+        <div class="form-group col-md-3">
+          <!-- <label class="visible-xs visible-sm">Address</label>
+          1060 W Addison St -->
+          <input
+            type="number"
+            class="form-control"
+            name="yearofpassing4"
+            [(ngModel)]="formData.yearofpassing4"
+            id="yearofpassing4"
+            placeholder="Enter Year of Passing"
+          />
+        </div>
+        <div class="form-group col-md-3">
+          <!-- <label class="visible-xs visible-sm">Address</label>
+        1060 W Addison St -->
+          <input
+            class="form-control"
+            type="number"
+            [(ngModel)]="formData.percentage4"
+            name="percentage4"
+            id="percentage4"
+            placeholder="Enter Percentage/CGPA"
+          />
+        </div>
+      </div>
+    </div>
+
+    <hr />
+    <h4 style="color: white">Enter Experience:</h4>
+
+    <div class="jumbotron">
+      <div class="row visible-md visible-lg">
+        <div class="form-group col-md-4">
+          <label>Organization</label>
+        </div>
+        <div class="form-group col-md-4">
+          <label>Joining Date</label>
+        </div>
+        <div class="form-group col-md-4">
+          <label>Releaving Date</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-4">
+          <!-- <label class="visible-xs visible-sm">First Name</label>
+                Jake -->
+          <input
+            class="form-control"
+            type="text"
+            [(ngModel)]="formData.organization1"
+            name="organization1"
+            id="organization1"
+            placeholder="Enter Organization"
+          />
+        </div>
+        <div class="form-group col-md-4">
+          <!-- <label class="visible-xs visible-sm">Last Name</label>
+                Elwood -->
+          <input
+            class="form-control"
+            type="date"
+            [(ngModel)]="formData.doj1"
+            name="doj1"
+            id="doj1"
+            placeholder="Enter Joining Date"
+          />
+        </div>
+        <div class="form-group col-md-4">
+          <!-- <label class="visible-xs visible-sm">Address</label>
+                1060 W Addison St -->
+          <input
+            class="form-control"
+            type="date"
+            [(ngModel)]="formData.dor1"
+            name="dor1"
+            id="dor1"
+            placeholder="Enter Releaving Date"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-4">
+          <!-- <label class="visible-xs visible-sm">First Name</label>
+                John -->
+          <input
+            class="form-control"
+            type="text"
+            id="organization2"
+            [(ngModel)]="formData.organization2"
+            name="organization2"
+            placeholder="Enter Organization"
+          />
+        </div>
+        <div class="form-group col-md-4">
+          <!-- <label class="visible-xs visible-sm">Last Name</label>
+                Wayne -->
+          <input
+            class="form-control"
+            type="date"
+            [(ngModel)]="formData.doj2"
+            name="doj2"
+            id="doj2"
+            placeholder="Enter Joining Date"
+          />
+        </div>
+        <div class="form-group col-md-4">
+          <!-- <label class="visible-xs visible-sm">Address</label>
+                18601 Airport Way -->
+          <input
+            class="form-control"
+            type="date"
+            [(ngModel)]="formData.dor2"
+            name="dor2"
+            id="dor2"
+            placeholder="Enter Releaving Date"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-4">
+          <!-- <label class="visible-xs visible-sm">First Name</label>
+              John -->
+          <input
+            class="form-control"
+            type="text"
+            [(ngModel)]="formData.organization3"
+            name="organization3"
+            id="organization3"
+            placeholder="Enter Organization"
+          />
+        </div>
+        <div class="form-group col-md-4">
+          <!-- <label class="visible-xs visible-sm">Last Name</label>
+              Wayne -->
+          <input
+            class="form-control"
+            type="date"
+            [(ngModel)]="formData.doj3"
+            name="doj3"
+            id="doj3"
+            placeholder="Enter Joining Date"
+          />
+        </div>
+        <div class="form-group col-md-4">
+          <!-- <label class="visible-xs visible-sm">Address</label>
+              18601 Airport Way -->
+          <input
+            class="form-control"
+            type="date"
+            [(ngModel)]="formData.dor3"
+            name="dor3"
+            id="dor3"
+            placeholder="Enter Releaving Date"
+          />
+        </div>
+      </div>
+    </div>
+
+    <hr />
+    <h4 style="color: white">Enter Skill:</h4>
+
+    <div class="jumbotron">
+      <div class="row visible-md visible-lg">
+        <div class="form-group col-md-3">
+          <label>Technology</label>
+        </div>
+        <div class="form-group col-md-3">
+          <label>Version Worked On</label>
+        </div>
+        <div class="form-group col-md-3">
+          <label>Last Worked On</label>
+        </div>
+        <div class="form-group col-md-3">
+          <label>Ratting</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-3">
+          <!-- <label class="visible-xs visible-sm">First Name</label>
+                Jake -->
+          <input
+            class="form-control"
+            type="text"
+            [(ngModel)]="formData.tech1"
+            name="tech1"
+            id="tech1"
+            placeholder="Enter Technology"
+          />
+        </div>
+        <div class="form-group col-md-3">
+          <!-- <label class="visible-xs visible-sm">Last Name</label>
+                Elwood -->
+          <input
+            class="form-control"
+            type="text"
+            [(ngModel)]="formData.version1"
+            name="version1"
+            id="version1"
+            placeholder="Enter Version Worked On"
+          />
+        </div>
+        <div class="form-group col-md-3">
+          <!-- <label class="visible-xs visible-sm">Address</label>
+                1060 W Addison St -->
+          <select
+            id="lastworkedon1"
+            name="lastworkedon1"
+            [(ngModel)]="formData.lastworkedon1"
+          >
+            <option value="">-select-</option>
+            <option>Last Month</option>
+            <option>Within 6 months</option>
+            <option>Before 6 Months</option>
+          </select>
+        </div>
+        <div class="form-group col-md-3">
+          <!-- <label class="visible-xs visible-sm">Address</label>
+              1060 W Addison St -->
+          <input
+            class="form-control"
+            type="number"
+            [(ngModel)]="formData.rate1"
+            max="10"
+            name="rate1"
+            id="rate1"
+            placeholder="Rate yourself out of 10"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-3">
+          <!-- <label class="visible-xs visible-sm">First Name</label>
+                John -->
+          <input
+            class="form-control"
+            type="text"
+            [(ngModel)]="formData.tech2"
+            id="tech2"
+            name="tech2"
+            placeholder="Enter Technology"
+          />
+        </div>
+        <div class="form-group col-md-3">
+          <!-- <label class="visible-xs visible-sm">Last Name</label>
+                Wayne -->
+          <input
+            class="form-control"
+            type="text"
+            [(ngModel)]="formData.version2"
+            name="version2"
+            id="version2"
+            placeholder="Enter Version Worked On"
+          />
+        </div>
+        <div class="form-group col-md-3">
+          <!-- <label class="visible-xs visible-sm">Address</label>
+                18601 Airport Way -->
+          <select
+            name="lastworkedon2"
+            id="lastworkedon2"
+            [(ngModel)]="formData.lastworkedon2"
+          >
+            <option value="">-select-</option>
+            <option>Last Month</option>
+            <option>Within 6 months</option>
+            <option>Before 6 Months</option>
+          </select>
+        </div>
+        <div class="form-group col-md-3">
+          <!-- <label class="visible-xs visible-sm">Address</label>
+              18601 Airport Way -->
+          <input
+            class="form-control"
+            type="number"
+            max="10"
+            [(ngModel)]="formData.rate2"
+            name="rate2"
+            id="rate2"
+            placeholder="Rate yourself out of 10"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-3">
+          <!-- <label class="visible-xs visible-sm">First Name</label>
+              John -->
+          <input
+            class="form-control"
+            type="text"
+            name="tech3"
+            [(ngModel)]="formData.tech3"
+            id="tech3"
+            placeholder="Enter Technology"
+          />
+        </div>
+        <div class="form-group col-md-3">
+          <!-- <label class="visible-xs visible-sm">Last Name</label>
+              Wayne -->
+          <input
+            class="form-control"
+            type="text"
+            name="version3"
+            [(ngModel)]="formData.version3"
+            id="version3"
+            placeholder="Enter Version Worked On"
+          />
+        </div>
+        <div class="form-group col-md-3">
+          <!-- <label class="visible-xs visible-sm">Address</label>
+              18601 Airport Way -->
+          <select
+            name="lastworkedon3"
+            id="lastworkedon3"
+            [(ngModel)]="formData.lastworkedon3"
+          >
+            <option value="">-select-</option>
+            <option>Last Month</option>
+            <option>Within 6 months</option>
+            <option>Before 6 Months</option>
+          </select>
+        </div>
+        <div class="form-group col-md-3">
+          <!-- <label class="visible-xs visible-sm">Address</label>
+            18601 Airport Way -->
+          <input
+            class="form-control"
+            type="number"
+            max="10"
+            [(ngModel)]="formData.rate3"
+            name="rate3"
+            id="rate3"
+            placeholder="Rate yourself out of 10"
+          />
+        </div>
+      </div>
+    </div>
+
+    <hr />
+    <h4 style="color: white">Project detail</h4>
+    <textarea
+      name="project"
+      id="project"
+      [(ngModel)]="formData.project"
+      width="1000px"
+      height="200px"
+      placeholder="Enter you wishdom"
+    ></textarea>
+
+    <hr />
+    <h4 style="color: white">Describe Yourself:</h4>
+    <textarea
+      name="describe"
+      id="describe"
+      [(ngModel)]="formData.describe"
+      width="1000px"
+      height="200px"
+      placeholder="Enter you wishdom"
+    ></textarea>
+
+    <hr />
+    <h4 style="color: white">Declaration:</h4>
+    <textarea
+      name="declare"
+      [(ngModel)]="formData.declare"
+      id="declare"
+      width="1000px"
+      height="200px"
+      placeholder="Enter you wishdom"
+    ></textarea
+    ><br />
+    <hr />
+    <label style="color: white">Upload the all document</label><br />
+    <input type="file" name="pimg" placeholder="upload document" />
+    <br />
+    <div style="margin-top: 20px">
+      <button class="btn btn-success m-3"
+        type="reset"
+        style="background-color: #b3bf38"
+        data-toggle="modal"
+        data-target="#amodal"
+      >
+        Reset
+      </button>
+      <button type="submit" class="btn-primary">Submit</button>
+
+      <div class="modal" id="amodal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3>Form Reset</h3>
+            </div>
+            <div class="modal-body">
+              <p>Form is reset</p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<app-resume *ngIf="showResume" [formData]="formData" (editInfoEvent)="editinfo($event)"></app-resume>
+
+
+
+<!-- 
+  "strictPropertyInitialization":false,
+  <tag [attri-name]="value"> add html
+    @Input ts  add file
+resumeDataInput:ResumeFormData
+
+
+  input paramete(parent pass input to the child)
+parent pass the input as an attribute to the template selector the cild recieve the data throught a decorator called @input -->
+
+<!-- (click) "fnName()" using a event emiiter
+
+add the resume component html  <button class ="btn btn-primary" (click) ="editinfo()"> Edit info</button>
+
+add the resume c ts
+editinfo(): void {
+  alert("prepating the value fill please wait");
+  this.editInfoEvent.emit(true);
+}
+
+(editInfoEvent)="editinfo($event)" html form
+
+editinfo(editInfo: boolean){
+alert(editInfo)
+  this.showResume = false; !editInfo; form secton in ts
+}
+
+@output 
+editinfoEvent: eventEmitter<void> sresume
+
+
+
+
+  add the construct
+  this.editinfoEvent = new EventEmitter<void>();
+-->
