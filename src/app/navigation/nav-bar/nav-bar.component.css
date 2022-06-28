@@ -1,0 +1,13 @@
+#resume_builder_header{
+    background-color: #0da5a5;
+    height: 80px;
+    text-align: center;
+    color: white;
+    display: flex;
+    font-size: 20px;
+  }
+
+  .head{
+    margin-left: 20px;
+     margin-top: 14px;
+  }

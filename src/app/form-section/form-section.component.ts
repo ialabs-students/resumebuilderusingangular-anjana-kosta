@@ -77,6 +77,8 @@ export class FormSectionComponent {
 
   }
 
+  url="./assets/resume/anjana.jpg"
+
   saveFormData() {
     console.log(this.formData);
     //localStorage.setItem("formData", JSON.stringify(this.formData));
@@ -86,5 +88,15 @@ export class FormSectionComponent {
   editinfo(editInfo: string) {
     //alert(editInfo)
     this.showResume = false; //form secton in ts
+  }
+
+  onselectFile(files: any){
+if(files.target.files){
+var reader = new FileReader();
+reader.readAsDataURL(files.target.files[0]);
+reader.onload=(event:any)=>{
+  this.url=event.target.result;
+}
+}
   }
 }

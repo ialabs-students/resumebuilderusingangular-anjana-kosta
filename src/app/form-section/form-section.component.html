@@ -40,7 +40,7 @@
             class="card-img-top"
             width="200"
             height="200"
-            src="./assets/resume/anjana.jpg"
+            [src]="url"
             alt="anjana"
           />
           <label>Upload Picture</label>
@@ -49,6 +49,7 @@
             placeholder="upload document"
             id="pic"
             name="pic"
+            (change)="onselectFile($event )"
           />
           <a href="#" class="fa fa-facebook"></a>
           <a href="#" class="fa fa-twitter"></a>
@@ -150,6 +151,7 @@
             >
               <option value="">Select</option>
               <option>Student</option>
+              <option>Fresher</option>
               <option>Employee</option>
             </select>
           </div>
